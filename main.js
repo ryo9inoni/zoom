@@ -20,7 +20,7 @@ export default class Zoom {
       const top = EL.parallaxAll[i].getBoundingClientRect().top;
       const height = EL.parallaxAll[i].clientHeight;
       const pos = offset + top + height;
-      const flagImg = EL.parallaxAll[i].classList.contains('toilet__image');
+      const flagImg = EL.parallaxAll[i].classList.contains('image');
       if (flagImg && offset > pos) {
         EL.parallaxAll[i].querySelectorAll('img').forEach(el => {
           el.style.transform = 'scale(1)';
@@ -49,7 +49,7 @@ export default class Zoom {
       }
 
       // 画像ズーム
-      const flagImg = EL.parallaxAll[i].classList.contains('toilet__image');
+      const flagImg = EL.parallaxAll[i].classList.contains('image');
       if (flagImg && top > 0 && offset > pos) {
         const zoom = 1 + (this.max - 1) * -1 * (top / -this.range);
         EL.parallaxAll[i].querySelectorAll('img').forEach(el => {
